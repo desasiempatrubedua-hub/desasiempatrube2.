@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Statistik - Desa Siempat Rube II</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap-5.0.0-dist/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
+    />
+
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    
+    <style>
+   body {
+      font-family: 'Merriweather', serif;
+      background-color: #fff; 
+    }
+   /* Custom arrow styles for axes */
+   .axis-container {
+      position: relative;
+      display: flex;
+      align-items: flex-end;
+      gap: 0rem; /* space-x-6 */
+      height: 6.50rem; /* h-32 */
+   }
+   .y-axis {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     height: 100%;
+     font-size: 0.75rem; /* text-xs */
+     font-weight: 400; /* font-normal */
+     color: black;
+     line-height: 1.2;
+     position: relative;
+     padding-right: 0.75rem; /* offset from vertical line on right */
+     text-align: right;
+    }
+    .y-axis span {
+      user-select: none;
+    }
+    .y-axis::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background-color: #1c1b08;
+    }
+    .y-axis::before {
+      content: "";
+      position: absolute;
+      right: -6px;
+      top: 0;
+      border-top: 8px solid transparent;
+      border-bottom: 8px solid transparent;
+      border-left: 8px solid #151514;
+    }
+    .bars-container {
+      display: flex;
+      gap: 1.5rem; /* space-x-6 */
+      align-items: flex-end;
+      height: 100%;
+      position: relative;
+      padding-bottom: 0; /* space for labels */
+      flex-grow: 1; /* Allow bars container to take available space */
+    }
+    .bars-container::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background-color: #161507;
+      border-top-right-radius: 0.125rem; /* rounded-sm */
+      border-bottom-right-radius: 0.125rem;
+      z-index: 10;
+    }
+    .bar {
+      width: 2.5rem; /* w-10 */
+      border-radius: 0.125rem; /* rounded-sm */
+      background-color: #bfb94a;
+      position: relative;
+      z-index: 20;
+    }
+    .bar-label {
+      margin-top: 0.25rem; /* mt-1 */
+      font-size: 0.75rem; /* text-xs */
+      text-align: center;
+      user-select: none;
+      line-height: 1.2;
+      position: relative;
+      z-index: 20;
+    }
+    /* Custom colors for consistency */
+    .bg-custom-yellow {
+      background-color: #d9d25a;
+    }
+    .bg-custom-light-yellow {
+      background-color: #f0e7b3;
+    }
+    .bg-custom-blue {
+      background-color: #1ca9c9;
+    }
+    .bg-custom-dark-yellow {
+      background-color: #bfb94a;
+    }
+    .text-custom-dark {
+      color: #1c1b08; /* Assuming this is the dark color from original CSS */
+    }
+  </style>
+  </head>
+
+  <body class="bg-white">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light main-color fixed-top">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="image/logo.png" alt="Rumah BUMN" />
+      </a>
+
+      <!-- Hamburger Button -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="custom-toggler-icon"></span>
+      </button>
+
+      <!-- Menu Navigasi -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item me-4">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="statistics.html">Statistics</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+<section>
+  <div class="container-fluid px-3 py-3">
+   <!-- Title with lines and dots -->
+   <div class="d-flex align-items-center justify-content-center mb-4">
+    <div class="d-flex align-items-center">
+     <div class="position-relative d-flex align-items-center">
+      <div class="rounded-circle bg-custom-dark-yellow" style="width: 1rem; height: 1rem;">
+      </div>
+      <div class="bg-custom-dark-yellow ms-2" style="height: 1.5px; width: 5rem;">
+      </div>
+     </div>
+     <h1 class="fs-3 fw-bold text-black user-select-none mx-2">
+      Data Statistik
+     </h1>
+     <div class="position-relative d-flex align-items-center">
+      <div class="bg-custom-dark-yellow me-2" style="height: 1.5px; width: 5rem;">
+      </div>
+      <div class="rounded-circle bg-custom-dark-yellow" style="width: 1rem; height: 1rem;">
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Top section with yellow background -->
+   <div class="row g-4 mb-0">
+    <!-- Left side: Jumlah Penduduk -->
+    <div class="col-md-6">
+     <div class="bg-custom-yellow rounded-start p-4 d-flex flex-column justify-content-center h-100">
+      <div class="mb-4 d-flex align-items-center justify-content-between">
+       <div>
+        <p class="fs-5 fw-normal mb-2 user-select-none">
+         Jumlah Penduduk
+        </p>
+        <p class="fs-2 fw-bold user-select-none">
+         1.023
+         <span class="fw-normal">
+          jiwa
+         </span>
+        </p>
+       </div>
+       <div class="d-flex flex-column">
+        <div class="d-flex align-items-center mb-2">
+         <div class="rounded-circle bg-custom-blue d-flex align-items-center justify-content-center me-4" style="width: 3rem; height: 3rem;">
+          <img alt="Male avatar with short black hair wearing yellow shirt and blue jacket" class="rounded-circle" height="40" src="https://storage.googleapis.com/a1aa/image/f551aafc-fb5c-48a1-ad56-861ba86bc0e6.jpg" width="40"/>
+         </div>
+         <p class="fs-4 fw-normal user-select-none">
+          Laki-laki
+          <span class="fw-bold">
+           513
+          </span>
+          jiwa
+         </p>
+        </div>
+        <div class="d-flex align-items-center">
+         <div class="rounded-circle bg-custom-blue d-flex align-items-center justify-content-center me-4" style="width: 3rem; height: 3rem;">
+          <img alt="Female avatar with red hair wearing white shirt" class="rounded-circle" height="40" src="https://storage.googleapis.com/a1aa/image/ac9739ee-5546-4823-9d27-58972704ca56.jpg" width="40"/>
+         </div>
+         <p class="fs-4 fw-normal user-select-none">
+          Perempuan
+          <span class="fw-bold">
+           510
+          </span>
+          jiwa
+         </p>
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Right side: Bar chart with axes -->
+    <div class="col-md-4">
+     <div class="bg-white rounded-end p-3 d-flex flex-column justify-content-center h-100">
+      <p class="fw-bold fs user-select-none text-center" style="margin-bottom:3.0rem;">
+       Jumlah Penduduk/Dusun
+      </p>
+      <div class="axis-container">
+       <!-- Y axis with labels -->
+       <div aria-label="Y axis labels" class="y-axis user-select-none">
+        <span>
+         371 jiwa
+        </span>
+        <span>
+         357 jiwa
+        </span>
+        <span>
+         295 jiwa
+        </span>
+        <span>
+        </span>
+       </div>
+       <!-- Bars only -->
+       <div class="bars-container">
+        <div>
+        </div>
+         <div class="bar" style="height: 65px; margin-left: 10px; border: 2px solid #000;"></div>
+              <div class="bar" style="height: 96px; margin-left: 40px; border: 2px solid #000"></div>
+              <div class="bar" style="height: 25px; margin-left: 40px; border: 2px solid #000"></div>
+        <div>
+        </div>
+       </div>
+      </div>
+      <!-- Descriptions below chart -->
+      <div class="d-flex mt-2 text-xs text-center">
+       <p style="margin-left: 60px ; font-size: 15px;">
+        Dusun I
+        <br/>
+        <small>Jambu Mbelang I</small>
+       </p>
+       <p style="margin-left: 20px; font-size: 15px;">
+        Dusun II
+        <br/>
+        <small>Jambu Mbelang </small>
+       </p>
+       <p style="margin-left: 30px; font-size: 15px;" >
+        Dusun III
+        <br/>
+        <small>Kuta Kacip</small>
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- Bottom section with two columns -->
+   <div class="row g-4">
+    <!-- Left side: Tingkat Pendidikan -->
+    <div class="col-md-6">
+     <div class="bg-white rounded-start p-4 h-100">
+      <p class="fw-bold fs mb-4 user-select-none text-center">
+       Tingkat Pendidikan
+      </p>
+      <div class="row g-3 text-sm fw-normal text-black user-select-none">
+       <div class="col-6">
+        <p class="mb-1">
+         <small>Tidak Tamat SD</small>
+        </p>
+        <p class="bg-custom-light-yellow rounded px-2 py-1 d-inline-block fw-normal">
+         <small>94 jiwa</small>
+         </i>
+        </p>
+       </div>
+       <div class="col-6">
+        <p class="mb-1">
+         <small>Tamat SMA Sederajat</small>
+        </p>
+        <p class="bg-custom-light-yellow rounded px-2 py-1 d-inline-block fw-normal">
+         <small>306 jiwa</small>
+         </i>
+        </p>
+       </div>
+       <div class="col-6">
+        <p class="mb-1">
+         <small>Tamat SD</small>
+        </p>
+        <p class="bg-custom-light-yellow rounded px-2 py-1 d-inline-block fw-normal">
+         <small>205 jiwa</small>
+         </i>
+        </p>
+       </div>
+       <div class="col-6">
+        <p class="mb-1">
+         <small>Tamat Akademi/PT</small>
+        </p>
+        <p class="bg-custom-light-yellow rounded px-2 py-1 d-inline-block fw-normal">
+         <small>98 jiwa </small>
+         </i>
+        </p>
+       </div>
+       <div class="col-12">
+        <p class="mb-1">
+         <small>Tamat SMP</small>
+        </p>
+        <p class="bg-custom-light-yellow rounded px-2 py-1 d-inline-block fw-normal">
+         <small>177 jiwa</small>
+         </i>
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Right side: Mata Pencaharian Penduduk -->
+    <div class="col-md-6">
+     <div class="bg-custom-yellow rounded-end p-4 h-100">
+      <p class="fs fw-bold mb-4 user-select-none text-center">
+       Mata Pencaharian Penduduk
+      </p>
+      <div class="d-flex flex-wrap justify-content-between">
+       <div class="d-flex flex-column align-items-center text-center mb-3" style="width: 5rem;">
+        <div class="rounded-circle bg-custom-blue d-flex align-items-center justify-content-center mb-2" style="width: 3rem; height: 3rem;">
+         <img alt="Icon of rice plant representing Pertanian" class="rounded-circle" height="40" src="https://storage.googleapis.com/a1aa/image/30a21f32-2538-4b95-7a00-c52e79078525.jpg" width="40"/>
+        </div>
+        <p class="fw-bold fs-6 user-select-none">
+         Pertanian
+        </p>
+        <p class="fw-normal user-select-none">
+         <small>475 jiwa</small>
+         </span>
+        </p>
+       </div>
+       <div class="d-flex flex-column align-items-center text-center mb-3" style="width: 5rem;">
+        <div class="rounded-circle bg-custom-blue d-flex align-items-center justify-content-center mb-2" style="width: 3rem; height: 3rem;">
+         <img alt="Icon of market stall representing Perdagangan" class="rounded-circle" height="40" src="https://storage.googleapis.com/a1aa/image/c862c5b0-87b8-42e0-a057-6f0b0a74c84e.jpg" width="40"/>
+        </div>
+        <p class="fw-bold fs-6 user-select-none">
+         Perdagangan
+        </p>
+        <p class="fw-normal user-select-none">
+        <small>34 jiwa</small> 
+        </p>
+       </div>
+       <div class="d-flex flex-column align-items-center text-center mb-3" style="width: 5rem;">
+        <div class="rounded-circle bg-custom-blue d-flex align-items-center justify-content-center mb-2" style="width: 3rem; height: 3rem;">
+         <img alt="Icon of factory building representing Industri" class="rounded-circle" height="40" src="https://storage.googleapis.com/a1aa/image/c5748d44-c373-443c-3276-f2f82a8e6e80.jpg" width="40"/>
+        </div>
+        <p class="fw-bold fs-6 user-select-none">
+         Industri
+        </p>
+        <p class="fw-normal user-select-none">
+         <small>3 jiwa</small>
+         </span>
+        </p>
+       </div>
+       <div class="d-flex flex-column align-items-center text-center mb-3" style="width: 5rem;">
+        <div class="rounded-circle bg-custom-blue d-flex align-items-center justify-content-center mb-2" style="width: 3rem; height: 3rem;">
+         <img alt="Icon of man in suit representing PNS" class="rounded-circle" height="40" src="https://storage.googleapis.com/a1aa/image/86ecc90f-58a4-412a-11d2-deb357eec9bb.jpg" width="40"/>
+        </div>
+        <p class="fw-bold fs-6 user-select-none">
+         PNS
+        </p>
+        <p class="fw-normal user-select-none">
+         <small>35 jiwa</small>
+         </span>
+        </p>
+       </div>
+       <div class="d-flex flex-column align-items-center text-center mb-3" style="width: 5rem;">
+        <div class="rounded-circle bg-custom-blue d-flex align-items-center justify-content-center mb-2" style="width: 3rem; height: 3rem;">
+         <img alt="Icon of clock representing Honorer" class="rounded-circle" height="40" src="https://storage.googleapis.com/a1aa/image/9389dfd1-841b-4d0c-c930-994aba534d6c.jpg" width="40"/>
+        </div>
+        <p class="fw-bold fs-6 user-select-none">
+         Honorer
+        </p>
+        <p class="fw-normal user-select-none">
+         <small>15 jiwa</small>
+         </span>
+        </p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Bootstrap JS -->
+  <script crossorigin="anonymous" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+</section>
+
+    <!-- Footer -->
+     <hr>
+<footer class="bg-light text-center text-muted py-3 mt-5">
+  <small>&copy; 2025 Desa Siempat Rube II. All rights reserved.</small>
+</footer>
+
+
+    <!-- Scripts -->
+    <script src="bootstrap-5.0.0-dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

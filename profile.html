@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Desa Siempat Rube II</title>
+    <link rel="stylesheet" href="bootstrap-5.0.0-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<script>
+  const nextBtn = document.querySelector('.next-btn');
+  const prevBtn = document.querySelector('.prev-btn');
+  const carousel = document.getElementById('potensiCarousel');
+
+  nextBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: 320, behavior: 'smooth' });
+  });
+
+  prevBtn.addEventListener('click', () => {
+    carousel.scrollBy({ left: -320, behavior: 'smooth' });
+  });
+
+  // Read More logic
+  document.querySelectorAll('.read-more').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const text = this.previousElementSibling;
+      text.classList.toggle('expanded');
+      if (text.classList.contains('expanded')) {
+        this.textContent = 'Read Less <';
+      } else {
+        this.textContent = 'Read More >';
+      }
+    });
+  });
+</script>
+
+<body>
+      <!-- Navbar -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light main-color fixed-top">
+    <div class="container-fluid">
+      <!-- Logo -->
+      <a class="navbar-brand" href="index.html">
+        <img src="image/logo.png" alt="Rumah BUMN" />
+      </a>
+
+      <!-- Hamburger Button -->
+      <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="custom-toggler-icon"></span>
+      </button>
+
+      <!-- Menu Navigasi -->
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item me-4">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="profile.html">Profile</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="statistics.html">Statistics</a>
+          </li>
+          <li class="nav-item me-4">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+        <main class="container11">
+    <section class="hero1" id="home">
+      <main class="content1">
+        <h1 class="display-4 fw-bold">
+           Profile Desa
+        </h1>
+        <p>
+          Siempat Rube II adalah salah satu desa di Kecamatan Siempat Rube, Kabupaten Pakpak Bharat, Provinsi Sumatera Utara, Indonesia. 
+          Desa ini terdiri dari tiga dusun, yaitu Dusun Jambu Mbellang I, Dusun Jambu Mbellang II, dan Dusun Kuta Kacip. Mayoritas penduduk Desa Siempat Rube II memeluk agama Kristen.
+        </p>
+      </main>
+    </section>
+    
+      <div class="row g-5 p-4 p-md-5 mb-4">
+        <div class="col-md-8">
+    
+          <article class="blog-post">
+            <h2 class="display-5 link-body-emphasis mb-1"><small>Sejarah Desa Siempat Rube II</small></h2>
+            <p style="text-align: justify;"><small>Desa Siempat Rube II adalah Salah satu dari 3 Desa awal terbentuknya Kecamatan Siempat Rube pada Tahun 2005, Desa Siempat Rube II memekarkan diri menjadi Dua Desa, yaitu Desa Siempat Rube II dan Siempat Rube IV.</small></p>
+            <!-- <hr> -->
+             
+             <h1>Letak Geografis Desa Siempat Rube II</h1>
+            <p style="text-align: justify;"><small> Secara Geografis dan administrtif Desa Siempat Rube II merupakan salah satu dari enam Desa di Kecamatan Siempat Rube dan memiliki Luas Wilayah 18,62 Km2 secara topografis terletak didataran tinggi dengan ketinggian 1400 m diatas permukaan laut dengan suhu rata-rata 20-28˚ C yang terdiri dari tiga Dusun yaitu, Dusun I Jambu Mbellang, Dusun II Jambu Mbellang, dan Dusun Kuta Kacip. </small></p>
+            <p style="text-align: justify;"><small>Jumlah penduduk Desa Siempat Rube II sebanyak 1.023 jiwa dengan kepadatan penduduk sebesar 50 jiwa/km. Adapun jumlah penduduk laki-laki sebesar 513 jiwa dan perempuan sebesar 510 jiwa dengan ratio jenis kelamin 98,28. Jumlah rumah tangga Desa Siempat Rube II sebesar 257 RT dengan rata-rata penduduk per rumah tangga sebanyak 4 orang.</small></p>
+            <p style="text-align: justify;"><small>Lahan di Desa Siempat Rube II terdiri dari lahan kering sebesar  95% dan lahan basah atau persawahan sebesar 5%  .</small></p>
+            <p><strong>Batas Wilayah Desa Siempat Rube II</strong></p>
+            <ul>
+              <li><small>Sebelah Utara berbatasan dengan Desa Siempat Rube I</small></li>
+              <li><small>Sebelah Selatan berbatasan dengan Kecamatan STTU Julu</small></li>
+              <li><small>Sebelah Timur berbatasan dengan Desa Siempat Rube IV</small></li>
+              <li><small>Sebelah Barat berbatasan dengan Desa Traju</small></li>
+            </ul>
+    
+          <!-- <article class="blog-post">
+            <h2>Struktur Organisasi Pemerintahan Desa</h2>
+ 
+            <p><small>Beberapa UMKM tidak terdata karena adanya kendala tertentu seperti akses informasi dan waktu yang terbatas, sehingga data ini hanya merepresentasikan UMKM desa Hakim Bale Bujang yang telah didata oleh pihak Rumah BUMN Takengon, dan bukan keseluruhan UMKM di desa.</small></p>
+          </article>     -->
+        </div>
+    
+        <div class="col-md-4">
+          <div class="position-sticky" style="top: 2rem;">
+            <div class="p-4 mb-3 rounded" style="background-color: #1b3a2a; color: white;">
+      <h4 class="fst-italic">Visi :</h4>
+      <p class="mb-0">
+        <small><small><small><small>"Mewujudkan Desa Siempat Rube Dua sebagai Desa yang Mandiri Berbasis Pertanian Modern dan Agrowisata untuk Mencapai Masyarakat Sehat, Cerdas dan Sejahtera"</small></small></small></small>
+      </p>
+    </div>
+
+    <div class="p-4 mb-3 rounded" style="background-color: #1b3a2a; color: white;">
+      <h4 class="fst-italic">Misi :</h4>
+      <p class="mb-0">
+        <small><small><small><ul class="mb-0" style="font-size: smaller;">
+  <li>Memperbaiki dan menambah sarana dan prasarana yang dibutuhkan.</li>
+  <li>Meningkatkan SDM melalui pendidikan formal maupun informal dan meningkatkan tata kelola pemerintahan Desa. Bekerja sama dengan petugas penyuluh lapangan untuk meningkatkan hasil pertanian.</li>
+  <li>Meningkatkan intensifikasi dan ekstensifikasi pertanian yang ada di Desa Siempat Rube II. Mengembangkan kawasan agrowisata Desa.</li>
+  <li>Meningkatkan derajat kesehatan dan gizi masyarakat.</li>
+  <li>Meningkatkan kecerdasan masyarakat dan kesejahteraan masyarakat.</li>
+  <li>Meningkatkan dan mengelola Pendapatan Asli Desa Mewujudkan pemerintahan yang baik dan bersih melalui pelaksanaan Otonomi Daerah.</li>
+</ul></small></small></small>
+      </p>
+    </div>    
+            <!-- <div class="p-4">
+              <h4 class="fst-italic">Social Media & Contact</h4>
+              <ol class="list-unstyled">
+                <li><small><a href="https://www.instagram.com/explorehakimbalebujang?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram Hakim Bale Bujang</small></a></li>
+                <li><small><a href="https://www.instagram.com/rumahbumn_takengon?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram Rumah BUMN Takengon</a></small></li>
+                <li><small><a href="https://wa.me/6285372777912">WhatsApp Author</a></small></li>
+              </ol>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </main>
+
+  <!-- Gambar Full Width -->
+<div class="full-width-image">
+  <img src="image/sod1.jpg" alt="Gambar Desa" class="img-fluid w-80">
+</div>
+
+    <!-- hero section end -->
+
+      <script src="bootstrap-5.0.0-dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<!-- Potensi Desa Section -->
+<section class="potensi-desa-section my-5 px-3">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold">Potensi Desa</h2>
+    <hr class="mx-auto" style="width: 120px; height: 3px; background-color: #c5bb61; border: none;">
+  </div>
+
+  <div class="position-relative">
+    <!-- Tombol Navigasi -->
+    <button class="carousel-btn prev-btn">&#10094;</button>
+    <button class="carousel-btn next-btn">&#10095;</button>
+
+    <!-- Carousel -->
+    <div class="potensi-carousel" id="potensiCarousel">
+      <!-- Card 1 -->
+      <div class="potensi-card">
+        <img src="image/jagung1.jpg" alt="Jagung" class="card-img-top">
+        <div class="card-body">
+          <p class="card-text short-text" style="text-align: center;">
+            JAGUNG
+          </p>
+          <p class="card-text short-text" style="text-align: justify;">
+            <small>Tanaman jagung tumbuh melimpah dan menjadi komoditas penting bagi ketahanan pangan desa. Jagung tidak hanya dikonsumsi masyarakat, tapi juga dijual sebagai bahan baku industri pakan ternak. Dalam musim panen, hasil jagung dapat menjadi sumber penghasilan tambahan bagi para petani.</small>
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="potensi-card">
+        <img src="image/nanas1.jpg" alt="Nanas" class="card-img-top">
+        <div class="card-body">
+          <p class="card-text short-text" style="text-align: center;">
+            NANAS
+          </p>
+          <p class="card-text short-text" style="text-align: justify;">
+           <small>Nanas tumbuh subur di wilayah perbukitan desa. Rasa nanas yang manis dan segar menjadikannya banyak diminati, baik untuk konsumsi langsung maupun untuk diolah.</small> 
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="potensi-card">
+        <img src="image/kopi1.jpg" alt="Kopi" class="card-img-top">
+        <div class="card-body">
+          <p class="card-text short-text" style="text-align: center;">
+            KOPI
+          </p>
+          <p class="card-text short-text" style="text-align: justify;">
+            <small>Desa ini memiliki potensi unggulan dalam budidaya kopi. Perkebunan kopi yang terhampar di dataran tinggi menghasilkan biji kopi berkualitas dengan cita rasa khas. Proses tanam hingga panen dilakukan secara tradisional oleh petani lokal, menjaga keaslian rasa dan aroma kopi desa kami.</small>
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="potensi-card">
+        <img src="image/potensi/padi.jpg" alt="Singkong" class="card-img-top">
+        <div class="card-body">
+          <p class="card-text short-text" style="text-align: center;">
+            PADI
+          </p>
+          <p class="card-text short-text" style="text-align: justify;">
+            <small>Sebagai desa agraris, padi menjadi salah satu hasil utama pertanian masyarakat. Sawah-sawah yang membentang luas menjadi sumber kehidupan bagi banyak keluarga. Produksi beras dari desa kami dikenal bersih, pulen, dan alami karena minim penggunaan bahan kimia.</small>
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="potensi-card">
+        <img src="image/cabe.jpg" alt="Cabe" class="card-img-top">
+        <div class="card-body">
+          <p class="card-text short-text" style="text-align: center;">
+            CABAI
+          </p>
+          <p class="card-text short-text" style="text-align: justify;">
+            <small>Cabe merah besar dan rawit tumbuh baik di desa ini. Selain untuk konsumsi lokal, cabe juga didistribusikan ke pasar regional dan sangat dibutuhkan saat musim panen.</small>
+          </p>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hero Gua Section -->
+<section class="hero-gua d-flex align-items-center">
+  <div class="container text-white">
+    <div class="w-100">
+      <h1 class="display-4 fw-bold">CAGAR BUDAYA</h1>
+      <p class="lead" style="text-align: justify;">
+        Desa Siempat Rube II memiliki potensi cagar budaya berupa Situs Perabuen Mejan Padang yang menjadi warisan arkeologis penting bagi Suku Pakpak. Situs ini terdiri dari tatanan batu melingkar dengan diameter sekitar 3 meter dan delapan pertulanen (wadah abu jenazah) yang menyimpan sisa-sisa pembakaran.
+        Hasil ekskavasi arkeologi oleh tim Universitas Gadjah Mada (UGM) pada tahun 2023 menemukan fragmen keramik guci asing dari China dan India yang menunjukkan adanya hubungan dagang internasional sejak abad ke-12 Masehi. Penemuan ini menjadi bukti bahwa leluhur Pakpak Bharat memiliki peradaban maju dan keterhubungan dengan dunia luar.
+        Selain sebagai warisan sejarah, situs ini memiliki potensi wisata edukasi yang dapat meningkatkan kesadaran masyarakat terhadap pentingnya melestarikan peninggalan leluhur.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <hr class="my-5">
+    <div class="text-center mb-4">
+    <h2 class="fw-bold">Sarana dan Prasarana Desa</h2>
+    <hr class="mx-auto" style="width: 120px; height: 3px; background-color: #c5bb61; border: none;">
+  </div>
+
+  <section class="potensi-desa-section my-3 px-3">
+  <div class="position-relative">
+    <!-- Tombol Navigasi -->
+    <button class="carousel-btn prev-btn">&#10094;</button>
+    <button class="carousel-btn next-btn">&#10095;</button>
+
+    <!-- Carousel -->
+    <div class="potensi-carousel1" id="potensiCarousel">
+      <!-- Card 1 --> <div class="potensi-card1">
+        <img src="image/kantor.jpg" alt="Jagung" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+            KANTOR DESA SIEMPAT RUBE II
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <div class="potensi-card1">
+        <img src="image/puskes.jpg" alt="Jagung" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+            PUSAT KESEHATAN MASYARAKAT
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="potensi-card1">
+        <img src="image/ambulan.jpg" alt="Nanas" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+           AMBULANS
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="potensi-card1">
+        <img src="image/tember.jpg" alt="Kopi" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+            TAMAN BERMAIN ANAK
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <div class="potensi-card1">
+        <img src="image/sd.jpg" alt="Singkong" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+              SDN NO.034816 JAMBU MBELLANG
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <div class="potensi-card1">
+        <img src="image/paud.jpg" alt="Nanas" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+           PAUD
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <div class="potensi-card1">
+        <img src="image/polides.jpg" alt="Nanas" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+           POLIDES
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+       <div class="potensi-card1">
+        <img src="image/sungai.jpg" alt="Singkong" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+            SUNGAI LEI KOMBIH SI MAMBO
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="potensi-card1">
+        <img src="image/baldes.jpg" alt="Singkong" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+            BALAI DESA
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="potensi-card1">
+        <img src="image/tugu.jpg" alt="Cabe" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+            TUGU JAGUNG
+          </p>
+        </div>
+      </div>
+            <div class="potensi-card1">
+        <img src="image/sampah.jpg" alt="Singkong" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+            TEMPAT PENGELOLAAN SAMPAH
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+            <div class="potensi-card1">
+        <img src="image/pemandian.jpg" alt="Singkong" class="card-img-top">
+        <div class="card-body">
+          <p class="fs fw-bold mb-4 user-select-none text-center">
+              TEMPAT PEMANDIAN
+          </p>
+          <!-- <a href="#" class="read-more">Read More ></a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</section>
+
+<!-- <hr class="my-2"> -->
+<footer class="bg-light text-center text-muted py-3 mt-5">
+  <small>&copy; 2025 Desa Siempat Rube II. All rights reserved.</small>
+</footer>
+       
+  </head>
+<body>
+<script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+ <script src="bootstrap-5.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous"></script></body>
+</body>
+</html>
